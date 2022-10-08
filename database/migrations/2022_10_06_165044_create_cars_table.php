@@ -23,7 +23,7 @@ return new class extends Migration
                 ->cascadeOnUpdate();
             $table->unsignedDecimal('rent');
             $table->string('year', 4);
-            $table->string('register_number');
+            $table->string('register_number')->unique();
             $table->string('color');
             $table->string('kpp');
             $table->timestamps();

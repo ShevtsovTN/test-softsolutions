@@ -2,14 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\Brand;
+use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 
 /**
- * @extends Factory<Brand>
+ * @extends Factory<Role>
  */
-class BrandFactory extends Factory
+class RoleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,9 +19,7 @@ class BrandFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->randomElement([
-                'Mercedes', 'BMW', 'Lexus', 'Toyota', 'Chevrolet', 'Volvo', 'Hyundai', 'Suzuki'
-            ]),
+            'role' => 'admin',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

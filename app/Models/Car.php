@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Car extends Model
 {
@@ -22,5 +23,10 @@ class Car extends Model
     public function model(): BelongsTo
     {
         return $this->belongsTo(ModelCar::class);
+    }
+
+    public function foto(): MorphMany
+    {
+        return $this->morphMany(File::class, 'entity');
     }
 }
