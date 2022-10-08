@@ -71,6 +71,7 @@ class CarController extends Controller
      *
      * @param Car $car
      * @return CarResource
+     * @throws Exception
      */
     public function destroy(Car $car): CarResource
     {

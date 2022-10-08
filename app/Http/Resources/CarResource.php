@@ -22,8 +22,8 @@ class CarResource extends JsonResource
             'register_number' => $this->register_number,
             'color' => $this->color,
             'kpp' => $this->kpp,
-            'model' => BrandResource::make($this->whenLoaded('model')),
-            'foto' => FileResource::make($this->whenLoaded('foto')),
+            'model' => ModelCarResource::make($this->whenLoaded('model')),
+            'foto' => FileCollection::make($this->whenLoaded('foto')),
             'created_at' => $this->created_at,
             'updated_at' => $this->created_at,
         ];

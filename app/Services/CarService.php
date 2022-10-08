@@ -12,7 +12,10 @@ class CarService
 
     public function index(): LengthAwarePaginator
     {
-        return Car::query()->with('model.brand')->paginate(request('per_page', 15));
+        return Car::query()->with([
+            'model.brand',
+            'foto'
+        ])->paginate(request('per_page', 15));
     }
 
     /**
