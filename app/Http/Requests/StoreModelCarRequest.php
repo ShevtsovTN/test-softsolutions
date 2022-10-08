@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Brand;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreModelCarRequest extends FormRequest
 {
@@ -24,7 +26,12 @@ class StoreModelCarRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string',
+            'brand_id' => [
+                'required',
+                'integer',
+                Rule::exists(Brand::class, 'id')
+            ],
         ];
     }
 }

@@ -24,7 +24,30 @@ class StoreCarRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'rent' => [
+                'required',
+                'number'
+            ],
+            'foto' => [
+                'required',
+                'image'
+            ],
+            'year' => [
+                'required',
+                'string'
+            ],
+            'register_number' => [
+                'required',
+                'string'
+            ],
+            'color' => [
+                'required',
+                'string'
+            ],
+            'kpp' => [
+                'required',
+                'string'
+            ]
         ];
     }
 }

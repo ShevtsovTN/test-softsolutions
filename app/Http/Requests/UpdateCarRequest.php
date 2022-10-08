@@ -24,7 +24,24 @@ class UpdateCarRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'rent' => [
+                'number'
+            ],
+            'foto' => [
+                'image'
+            ],
+            'year' => [
+                'string'
+            ],
+            'register_number' => [
+                'string'
+            ],
+            'color' => [
+                'string'
+            ],
+            'kpp' => [
+                'string'
+            ]
         ];
     }
 }
