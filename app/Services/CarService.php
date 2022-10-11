@@ -32,7 +32,7 @@ class CarService
 
             DB::commit();
 
-            return $car->load('model.brand');
+            return $car->load(['model.brand', 'foto']);
         } catch (Exception $e) {
             DB::rollBack();
             throw new Exception($e->getMessage(), $e->getCode());
@@ -41,7 +41,7 @@ class CarService
 
     public function show(Car $car): Car
     {
-        return $car->load('model.brand');
+        return $car->load(['model.brand', 'foto']);
     }
 
     /**
@@ -57,7 +57,7 @@ class CarService
 
             DB::commit();
 
-            return $car->load('model.brand');
+            return $car->load(['model.brand', 'foto']);
 
         } catch (Exception $e) {
             DB::rollBack();
@@ -78,7 +78,7 @@ class CarService
 
             DB::commit();
 
-            return $car->load('model.brand');
+            return $car->load(['model.brand', 'foto']);
 
         } catch (Exception $e) {
             DB::rollBack();
