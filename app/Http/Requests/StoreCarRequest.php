@@ -34,11 +34,15 @@ class StoreCarRequest extends FormRequest
             ],
             'year' => [
                 'required',
-                'string'
+                'string',
+                'min:4',
+                'max:4',
             ],
             'register_number' => [
                 'required',
-                'string'
+                'string',
+                'min:4',
+                'max:20',
             ],
             'color' => [
                 'required',

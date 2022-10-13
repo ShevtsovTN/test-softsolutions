@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\DB;
 
 class CarService
 {
-
+    /**
+     * @return LengthAwarePaginator
+     */
     public function index(): LengthAwarePaginator
     {
         return Car::query()->with([
@@ -21,7 +23,7 @@ class CarService
     /**
      * @throws Exception
      */
-    public function store(mixed $validated): Car
+    public function store(array $validated): Car
     {
         DB::beginTransaction();
 
@@ -39,6 +41,10 @@ class CarService
         }
     }
 
+    /**
+     * @param Car $car
+     * @return Car
+     */
     public function show(Car $car): Car
     {
         return $car->load(['model.brand', 'foto']);
